@@ -1,0 +1,566 @@
+/* ---------- Layout ---------- */
+.contenido {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 20px 130px;
+}
+
+h1,
+h2 {
+  font-family: var(--fuente-titulo);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+/* ---------- Portada ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--naranja);
+  color: var(--crema);
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 48px 40px;
+  margin-bottom: 32px;
+}
+
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero::before {
+  width: 260px;
+  height: 260px;
+  background-color: var(--amarillo);
+  right: -60px;
+  top: -80px;
+}
+
+.hero::after {
+  width: 140px;
+  height: 140px;
+  background-color: var(--rosa);
+  right: 140px;
+  bottom: -70px;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  margin: 12px 0 16px;
+}
+
+.hero p {
+  max-width: 460px;
+  font-size: 1.05rem;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  background-color: var(--crema);
+  color: var(--verde);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* ---------- Tarjetas de resumen ---------- */
+.resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 22px;
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tarjeta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--verde);
+}
+
+.tarjeta-numero {
+  font-family: var(--fuente-titulo);
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.tarjeta-texto {
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tarjeta-total {
+  background-color: var(--azul);
+}
+
+.tarjeta-bajo {
+  background-color: var(--amarillo);
+}
+
+.tarjeta-agotado {
+  background-color: var(--rosa);
+}
+
+.tarjeta-agotado .tarjeta-numero {
+  color: var(--rojo);
+}
+
+/* ---------- Buscador ---------- */
+.buscador {
+  width: 100%;
+  padding: 16px 18px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--verde);
+  background-color: #ffffff;
+  border: var(--borde);
+  border-radius: var(--radio);
+  margin-bottom: 20px;
+  transition: box-shadow 0.15s;
+}
+
+.buscador::placeholder {
+  color: var(--verde);
+  opacity: 0.55;
+}
+
+.buscador:focus {
+  outline: none;
+  box-shadow: 5px 5px 0 var(--naranja);
+}
+
+/* ---------- Tabla ---------- */
+.tabla-contenedor {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.tabla-inventario {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-inventario th,
+.tabla-inventario td {
+  padding: 14px 18px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tabla-inventario th {
+  background-color: var(--verde);
+  color: var(--crema);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.tabla-inventario tbody tr {
+  border-bottom: 1px dashed rgba(71, 81, 11, 0.3);
+}
+
+.tabla-inventario tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tabla-inventario tbody tr:nth-child(even) {
+  background-color: var(--crema);
+}
+
+.tabla-inventario tbody tr:hover {
+  background-color: #fff9b8;
+}
+
+.celda-producto {
+  font-weight: 700;
+}
+
+/* ---------- Etiquetas: categoría y estado ---------- */
+.categoria,
+.estado {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border: 1.5px solid var(--verde);
+}
+
+.cat-amarillo { background-color: var(--amarillo); }
+.cat-azul     { background-color: var(--azul); }
+.cat-rosa     { background-color: var(--rosa); }
+.cat-lima     { background-color: var(--lima); }
+.cat-naranja  { background-color: var(--naranja); color: var(--crema); }
+.cat-rojo     { background-color: var(--rojo); color: var(--crema); }
+
+.estado {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+}
+
+.estado-ok {
+  background-color: var(--lima);
+}
+
+.estado-bajo {
+  background-color: var(--amarillo);
+}
+
+.estado-agotado {
+  background-color: var(--rojo);
+  color: var(--crema);
+  border-color: var(--rojo);
+}
+
+.sin-resultados {
+  padding: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ---------- Menú inferior ---------- */
+.menu-inferior {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+  background-color: var(--verde);
+  border: var(--borde);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 var(--naranja);
+  z-index: 10;
+}
+
+.menu-inferior a {
+  color: var(--crema);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.menu-inferior a:hover {
+  background-color: rgba(253, 250, 216, 0.15);
+}
+
+.menu-inferior a.active {
+  background-color: var(--amarillo);
+  color: var(--verde);
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 600px) {
+  .hero {
+    padding: 36px 24px;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .menu-inferior a {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ========== Portadas de otros colores ========== */
+.hero-verde {
+  background-color: var(--verde);
+}
+
+.hero-verde::before {
+  background-color: var(--lima);
+}
+
+.hero-verde::after {
+  background-color: var(--naranja);
+}
+
+.hero-azul {
+  background-color: var(--azul);
+  color: var(--verde);
+}
+
+.hero-azul::before {
+  background-color: var(--amarillo);
+}
+
+.hero-azul::after {
+  background-color: var(--rosa);
+}
+
+.hero-azul .etiqueta {
+  background-color: var(--verde);
+  color: var(--crema);
+}
+
+/* ========== Bloques de contenido ========== */
+.bloque {
+  background-color: #ffffff;
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.bloque h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.bloque p + p {
+  margin-top: 12px;
+}
+
+.titulo-seccion {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* ========== Valores (Quiénes somos) ========== */
+.grid-valores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.valor {
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 24px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.valor:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--verde);
+}
+
+.valor h3 {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.valor-lima { background-color: var(--lima); }
+.valor-amarillo { background-color: var(--amarillo); }
+.valor-rosa { background-color: var(--rosa); }
+
+/* ========== Cifras (Quiénes somos) ========== */
+.cifras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  background-color: var(--naranja);
+  color: var(--crema);
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+.cifra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.cifra + .cifra {
+  border-left: 2px dashed rgba(253, 250, 216, 0.5);
+}
+
+.cifra-numero {
+  font-family: var(--fuente-titulo);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.cifra-texto {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ========== Contáctanos ========== */
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.datos-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dato {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--amarillo);
+  border: var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 18px 20px;
+}
+
+.dato:nth-child(2) { background-color: var(--rosa); }
+.dato:nth-child(3) { background-color: var(--lima); }
+.dato:nth-child(4) { background-color: var(--azul); }
+
+.dato-titulo {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.dato-valor {
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* ========== Formulario ========== */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--verde);
+  background-color: var(--crema);
+  border: var(--borde);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: box-shadow 0.15s;
+}
+
+.formulario textarea {
+  resize: vertical;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 var(--naranja);
+}
+
+.error {
+  color: var(--rojo);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.boton {
+  align-self: flex-start;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--crema);
+  background-color: var(--naranja);
+  border: var(--borde);
+  border-radius: 999px;
+  padding: 14px 28px;
+  box-shadow: 4px 4px 0 var(--verde);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.boton:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--verde);
+}
+
+.boton:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--verde);
+}
+
+.mensaje-exito {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ========== Celular (páginas nuevas) ========== */
+@media (max-width: 700px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bloque {
+    padding: 24px;
+  }
+
+  .cifra + .cifra {
+    border-left: none;
+    border-top: 2px dashed rgba(253, 250, 216, 0.5);
+  }
+}

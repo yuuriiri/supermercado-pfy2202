@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap');
+
+:root {
+  /* Paleta */
+  --naranja: #FF5B03;
+  --amarillo: #FFF24D;
+  --crema: #FDFAD8;
+  --rojo: #AB1717;
+  --verde: #47510B;
+  --rosa: #FFB6A9;
+  --lima: #CAD23C;
+  --azul: #A1AED1;
+
+  /* Uso */
+  --fuente-titulo: 'Fraunces', Georgia, serif;
+  --fuente-texto: 'Archivo', Arial, Helvetica, sans-serif;
+  --borde: 2px solid var(--verde);
+  --sombra: 5px 5px 0 var(--verde);
+  --radio: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  background-color: var(--crema);
+  color: var(--verde);
+  line-height: 1.5;
+}

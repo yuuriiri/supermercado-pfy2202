@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap');
+@import "tailwindcss";
 
+/* Paleta y fuentes registradas en Tailwind: crean clases como bg-naranja, text-verde, font-titulo */
+@theme {
+  --color-naranja: #FF5B03;
+  --color-amarillo: #FFF24D;
+  --color-crema: #FDFAD8;
+  --color-rojo: #AB1717;
+  --color-verde: #47510B;
+  --color-rosa: #FFB6A9;
+  --color-lima: #CAD23C;
+  --color-azul: #A1AED1;
+
+  --font-titulo: 'Fraunces', Georgia, serif;
+  --font-texto: 'Archivo', Arial, Helvetica, sans-serif;
+  
+  --shadow-retro: 5px 5px 0 #47510B;
+  --shadow-retro-naranja: 4px 4px 0 #FF5B03;
+}
+
+/* Variables que usa App.css (páginas de la semana 1) */
 :root {
-  /* Paleta */
   --naranja: #FF5B03;
   --amarillo: #FFF24D;
   --crema: #FDFAD8;
@@ -11,18 +30,11 @@
   --lima: #CAD23C;
   --azul: #A1AED1;
 
-  /* Uso */
   --fuente-titulo: 'Fraunces', Georgia, serif;
   --fuente-texto: 'Archivo', Arial, Helvetica, sans-serif;
   --borde: 2px solid var(--verde);
   --sombra: 5px 5px 0 var(--verde);
   --radio: 14px;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
